@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMaintenance", "UserMaintenance\UserMaintenance.csproj", "{3DD6ABE6-891F-4687-9D2D-C1CDE0FEA189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTabla", "ExcelTabla\ExcelTabla.csproj", "{851ED338-5CE9-4D0D-85E5-02648A6A2DBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week04", "ExcelTabla\week04.csproj", "{851ED338-5CE9-4D0D-85E5-02648A6A2DBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
