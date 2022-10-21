@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace Arfolyamok
@@ -20,6 +21,27 @@ namespace Arfolyamok
             InitializeComponent();
             dataGridView1.DataSource = Rates;
             XMLedit(loading());
+            diagramm();
+        }
+
+        private void diagramm()
+        {
+            ChartRateData.DataSource = Rates;
+
+            var series = ChartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            
+
+            var legend = ChartRateData.Legends[0];
+            legend.Enabled = false;
+
+            series.BorderWidth = 2;
+            var chartArea = ChartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
         }
 
         private void XMLedit(string result)
