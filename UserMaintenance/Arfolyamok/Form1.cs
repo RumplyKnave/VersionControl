@@ -19,11 +19,16 @@ namespace Arfolyamok
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Rates;
-            XMLedit(loading());
-            diagramm();
+            RefreshData();
         }
+        private void RefreshData()
+        {
+            Rates.Clear();
+            dataGridView1.DataSource = Rates;
+            XMLedit(loading(comboBox1.SelectedValue.ToString(), dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString()));
+            diagramm();
 
+        }
         private void diagramm()
         {
             ChartRateData.DataSource = Rates;
@@ -72,16 +77,16 @@ namespace Arfolyamok
         BindingList <RateData> Rates = new BindingList<RateData> ();
         
         
-        private string loading()
+        private string loading(string currency, string startdate, string enddate)
         {
 
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = currency,
+                startDate = startdate,
+                endDate = enddate
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -89,6 +94,21 @@ namespace Arfolyamok
            var result = response.GetExchangeRatesResult;
 
             return result;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 
