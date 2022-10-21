@@ -1,4 +1,5 @@
-﻿using Arfolyamok.MnbServiceReference;
+﻿using Arfolyamok.Entities;
+using Arfolyamok.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,8 @@ namespace Arfolyamok
             InitializeComponent();
             loading();
         }
-
+        
+        BindingList <RateData> Rates = new BindingList<RateData> ();
         private void loading()
         {
 
