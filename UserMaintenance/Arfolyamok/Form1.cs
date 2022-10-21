@@ -18,9 +18,12 @@ namespace Arfolyamok
         {
             InitializeComponent();
             loading();
+            dataGridView1.DataSource = Rates;
         }
         
         BindingList <RateData> Rates = new BindingList<RateData> ();
+        
+        
         private void loading()
         {
 
@@ -36,6 +39,8 @@ namespace Arfolyamok
             var response = mnbService.GetExchangeRates(request);
 
            var result = response.GetExchangeRatesResult;
+
+            
         }
     }
 
