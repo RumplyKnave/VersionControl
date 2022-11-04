@@ -7,11 +7,11 @@ using Xmas.Abstractions;
 
 namespace Xmas.Entities
 {
-    internal class BallFactory : IToyFactory
+    internal class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {
-            return new Ball();
+            return new Car();
         }
     }
 }
