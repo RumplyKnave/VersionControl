@@ -16,7 +16,6 @@ namespace Xmas.Abstractions
             Width = 50;
             Height = 50;
             Paint += Toy_Paint;
-
         }
 
         private void Toy_Paint(object sender, PaintEventArgs e)
