@@ -10,11 +10,12 @@ namespace Xmas.Entities
 {
     internal class PresentFactory : IToyFactory
     {
-        public Color PresentColor { get; set; }
+        public Color PresentColor1 { get; set; }
+        public Color PresentColor2 { get; set; }
 
         public Toy CreateNew()
         {
-            return new Present(PresentColor);
+            return new Present(PresentColor1, PresentColor2);
         }
     }
 }

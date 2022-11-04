@@ -104,7 +104,8 @@ namespace Xmas
         {
             Factory = new PresentFactory
             {
-                PresentColor = button5.BackColor
+                PresentColor1 = button5.BackColor,
+                PresentColor2 = button6.BackColor
             };
         }
 
