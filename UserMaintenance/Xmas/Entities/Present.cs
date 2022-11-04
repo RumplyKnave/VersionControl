@@ -4,23 +4,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Xmas.Abstractions;
 
 namespace Xmas.Entities
 {
-    public class Ball : Toy
+    public class Present : Toy
     {
-        public SolidBrush BallColor { get; private set; }
+        public SolidBrush PresentColor { get; private set; }
 
-        public Ball(Color color)
+        public Present(Color color)
         {
-            BallColor = new SolidBrush(color);
+            PresentColor = new SolidBrush(color);
         }
 
         protected override void DrawImage(Graphics g)
         {
-            g.FillEllipse(BallColor, 0, 0, Width, Height);
+            g.FillRectangle(PresentColor, 0, 0, Width, Height);
         }
     }
 }

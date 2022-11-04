@@ -8,13 +8,13 @@ using Xmas.Abstractions;
 
 namespace Xmas.Entities
 {
-    internal class BallFactory : IToyFactory
+    internal class PresentFactory : IToyFactory
     {
-        public Color BallColor { get; set; }
+        public Color PresentColor { get; set; }
 
         public Toy CreateNew()
         {
-            return new Ball(BallColor);
+            return new Present(PresentColor);
         }
     }
 }
